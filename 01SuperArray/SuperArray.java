@@ -1,4 +1,5 @@
 public class SuperArray{
+
     public String[] data;
     private int size;
     public SuperArray(){
