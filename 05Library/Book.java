@@ -31,4 +31,7 @@ public class Book{
 	this.isbn = isbn;
 	return true;
     }
+    public String toString(){
+	return title + "," + author + "," + isbn;
+    }
 }
