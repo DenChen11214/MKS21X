@@ -19,13 +19,16 @@ public class Book{
     public String getISBN(){
 	return isbn;
     }
-    public String setAuthor(String author){
+    public boolean setAuthor(String author){
 	this.author = author;
+	return true;
     }
-    public String setTitle(String title){
+    public boolean setTitle(String title){
 	this.title = title;
+	return true;
     }
-    public String setIBSN(String ibsn){
-	this.ibsn = ibsn;
+    public boolean setISBN(String isbn){
+	this.isbn = isbn;
+	return true;
     }
 }
