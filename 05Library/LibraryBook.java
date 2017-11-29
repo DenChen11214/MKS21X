@@ -17,4 +17,7 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
     public int compareTo(LibraryBook other){
 	return getCallNumber().compareTo(other.getCallNumber());
     }
+    public String toString(){
+	return circulationStatus() + getCallNumber();
+    }
 }
