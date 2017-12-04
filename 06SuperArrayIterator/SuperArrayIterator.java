@@ -12,6 +12,12 @@ public class SuperArrayIterator implements Iterator<String>{
     return index <= ary.size();
   }
   public String next(){
-    return null;
+    if (hasNext()){
+      index++;
+    }
+    else{
+      System.exit(0);
+    }
+    return ary.get(index - 1);
   }
 }
