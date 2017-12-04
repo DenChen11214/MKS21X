@@ -4,12 +4,13 @@ public class SuperArrayIterator implements Iterator<String>{
   private int index;
   public SuperArrayIterator(SuperArray ary){
     this.ary = ary;
+    index = 0;
   }
   public void remove(){
     throw new UnsupportedOperationException();
   }
   public boolean hasNext(){
-    return index <= ary.size();
+    return index <= ary.size() - 1;
   }
   public String next(){
     if (hasNext()){
