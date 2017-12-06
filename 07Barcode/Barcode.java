@@ -35,7 +35,7 @@ public class Barcode{
     int check = 0;
     int checkDigit = 0;
     if(code.length()!= 32 ||  
-       (code.charAt(0) != '|' && code.charAt(code.length() - 1) != '|')){
+       (code.charAt(0) != '|' || code.charAt(code.length() - 1) != '|')){
       throw new IllegalArgumentException();
     }
     for(int i =1;i< code.length() - 6;i +=5){
@@ -59,7 +59,6 @@ public class Barcode{
       }
     }
     checkDigit = checkDigit % 10;
-    System.out.println(checkDigit);
     if(!digitBarcode[checkDigit].equals(code.substring(code.length() - 6,code.length()- 1))){
       throw new IllegalArgumentException();
     }
