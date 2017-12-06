@@ -74,6 +74,11 @@ public class Barcode{
   public int compareTo(Barcode other){
     return getZip().compareTo(other.getZip());
   }
+  public String toString(){
+    String str = "";
+    str += getCode() + "(" + getZip() + ")";
+    return str;
+  }
   public static void main(String[] args){
     Barcode bar = new Barcode("12345");
     Barcode bar2 = new Barcode("14345");
