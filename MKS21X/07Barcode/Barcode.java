@@ -32,5 +32,7 @@ public class Barcode{
   public static void main(String[] args){
     Barcode bar = new Barcode("12345");
     System.out.println(toCode("12345"));
+    //System.out.println(toCode("123"));
+    System.out.println(toCode("132ba"));    
   }
 }
