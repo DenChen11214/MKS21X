@@ -68,6 +68,9 @@ public class Barcode{
   public String getZip(){
     return zip;
   }
+  public String getCode(){
+    return toCode(getZip());
+  }
   public int compareTo(Barcode other){
     return getZip().compareTo(other.getZip());
   }
@@ -76,6 +79,7 @@ public class Barcode{
     Barcode bar2 = new Barcode("14345");
     System.out.println(toZip("|:::||::|:|::||::|::|:|:|::|:|:|"));
     System.out.println(bar.compareTo(bar2));
+    System.out.println(bar.getCode());
   }
 
 }
