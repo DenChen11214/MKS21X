@@ -1,6 +1,6 @@
 public class Barcode{
   private String zip;
-  public Barcode(){
+  public Barcode(String zip){
     this.zip = zip;
     toCode(zip);
   }
@@ -28,5 +28,9 @@ public class Barcode{
     checkDigit = checkDigit % 10;
     barcode += digitBarcode[checkDigit] + "|";
     return barcode;
+  }
+  public static void main(String[] args){
+    Barcode bar = new Barcode("12345");
+    System.out.println(toCode("12345"));
   }
 }
