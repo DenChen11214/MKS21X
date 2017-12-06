@@ -1,0 +1,11 @@
+public class DriverOrdered{
+    public static void main(String args[]){
+	OrderedSuperArray ary = new OrderedSuperArray();
+	ary.add(0,"a");
+	ary.add(1,"b");
+	ary.add(2,"c");
+	ary.add(3,"d");
+	ary.add(4,"e");
+	System.out.println(indexOf("c"));
+    }
+}
