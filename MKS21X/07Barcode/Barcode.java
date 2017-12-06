@@ -29,10 +29,45 @@ public class Barcode{
     barcode += digitBarcode[checkDigit] + "|";
     return barcode;
   }
+  public static String toZip(String code){
+    String[] digitBarcode = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+    String zip = "";
+    int check = 0;
+    int checkDigit = 0;
+    if(code.length()!= 32 ||  
+       (code.charAt(0) != '|' && code.charAt(code.length() - 1) != '|')){
+      throw new IllegalArgumentException();
+    }
+    for(int i =1;i< code.length() - 6;i +=5){
+      for(int n = 0; n < digitBarcode.length; n ++){
+        if(!code.substring(i, i + 5).equals(digitBarcode[n])){
+          check ++;
+        }
+        if(code.substring(i,i+5).equals(digitBarcode[n]) 
+           && i < code.length() -6){
+          checkDigit += n;
+          zip += Integer.toString(n);
+        }
+      }
+    }
+    if(check == 60){
+      throw new IllegalArgumentException();    
+    }
+    for(int i = 0; i < code.length(); i++){
+      if(code.charAt(i) != ':' &&  code.charAt(i) != '|'){
+        throw new IllegalArgumentException();
+      }
+    }
+    checkDigit = checkDigit % 10;
+    System.out.println(checkDigit);
+    if(!digitBarcode[checkDigit].equals(code.substring(code.length() - 6,code.length()- 1))){
+      throw new IllegalArgumentException();
+    }
+    return zip;
+  }
+  
   public static void main(String[] args){
     Barcode bar = new Barcode("12345");
-    System.out.println(toCode("12345"));
-    //System.out.println(toCode("123"));
-    System.out.println(toCode("132ba"));    
+    System.out.println(toZip("|:::||::|:|::||::|::|:|:|::|:|:|"));    
   }
 }
