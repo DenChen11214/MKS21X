@@ -4,5 +4,12 @@ public class ReferenceBook extends LibraryBook{
     super(author,title,isbn,callNumber);
     this.collection = collection;
   }
+  public String getCollection(){
+    return collection;
+  }
+  public boolean setCollection(collection){
+    this.collection = collection;
+    return true;
+  }
 
 }
