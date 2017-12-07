@@ -27,6 +27,12 @@ public class CirculatingBook extends LibraryBook{
     dueDate = null;
   }
   public String circulationStatus(){
-    return "";
+    if(!currentHolder.equals(null) && !dueDate.equals(null)){
+      return currentHolder + dueDate;
+    }
+    else {
+      return "book available on shelves";
+    }
   }
+
 }
