@@ -7,9 +7,17 @@ public class ReferenceBook extends LibraryBook{
   public String getCollection(){
     return collection;
   }
-  public boolean setCollection(collection){
+  public boolean setCollection(String collection){
     this.collection = collection;
     return true;
   }
-
+  public void checkout(String patron, String due){
+    throw new UnsupportedOperationException("cannot check out a reference book");
+  }
+  public void returned(){
+    throw new UnsupportedOperationException("reference book could not have been checked out - return impossible");
+  }
+  public String circulationStatus(){
+    return "non-circulating reference book";
+  }
 }
