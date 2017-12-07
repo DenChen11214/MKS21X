@@ -34,5 +34,7 @@ public class CirculatingBook extends LibraryBook{
       return "book available on shelves";
     }
   }
-
+  public String toString(){
+    return getAuthor() + getTitle() + getISBN() + circulationStatus() + getCallNumber() + circulationStatus();
+  }
 }
