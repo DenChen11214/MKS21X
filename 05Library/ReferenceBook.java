@@ -20,4 +20,7 @@ public class ReferenceBook extends LibraryBook{
   public String circulationStatus(){
     return "non-circulating reference book";
   }
+  public String toString(){
+    return getAuthor() + getTitle() + getISBN() + circulationStatus() + getCallNumber(); + getCollection();
+  }
 }
