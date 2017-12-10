@@ -17,7 +17,6 @@ public class Sorts{
       }
       ary[i] = min;
       ary[minIndex] = temp;
-      System.out.println(ary[minIndex]);
     }
   }
   public static boolean isSorted(int[] ary){
@@ -69,15 +68,17 @@ public class Sorts{
     }
   }
   public static void main(String[] args){
-    int[] arry = {65,25,12,22,11};
-    int[] arry2 = {65,25,12,25,12};
-    bubbleSort(arry);
-    System.out.println(Arrays.toString(arry));
-    bubbleSort(arry2);
-    System.out.println(Arrays.toString(arry2));
-    insertionSort(arry);
-    System.out.println(Arrays.toString(arry));
-    insertionSort(arry2);
-    System.out.println(Arrays.toString(arry2));
+    int[] randish = new int[100];
+    for(int i = 0;i < randish.length;i++){
+      randish[i] = (int)(Math.random() * 100);
+    }
+    int[] randish2 = randish;
+    Arrays.sort(randish2);
+    //selectionSort(randish);
+    //System.out.println(isEqual(randish,randish2));
+    //insertionSort(randish);
+    //System.out.println(isEqual(randish,randish2));
+    //bubbleSort(randish);
+    //System.out.println(isEqual(randish,randish2));
   }
 }
