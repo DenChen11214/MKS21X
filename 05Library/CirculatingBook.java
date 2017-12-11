@@ -3,6 +3,8 @@ public class CirculatingBook extends LibraryBook{
   private String dueDate;
   public CirculatingBook(String author, String title, String isbn, String callnumber){
     super(author,title,isbn,callnumber);
+    currentHolder = null;
+    dueDate = null;
   }
   public String getCurrentHolder(){
     return currentHolder;
@@ -27,7 +29,7 @@ public class CirculatingBook extends LibraryBook{
     dueDate = null;
   }
   public String circulationStatus(){
-    if(!currentHolder.equals(null) && !dueDate.equals(null)){
+    if(currentHolder != (null) && dueDate != (null)){
       return currentHolder + dueDate;
     }
     else {
