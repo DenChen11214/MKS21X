@@ -1,8 +1,17 @@
-public class Barcode{
+public class Barcode implements Comparable<Barcode>{
   private String zip;
   public Barcode(String zip){
+    String ints = "0123456789";
+    if (zip.length() != 5){
+      throw new IllegalArgumentException();
+    }
+    for(int i = 0; i < zip.length(); i++){
+      if(!ints.contains(zip.substring(i,i+1))){
+        throw new IllegalArgumentException();
+      }
+    }
     this.zip = zip;
-    toCode(zip);
+    
   }
   public static String toCode(String zip){
     String ints = "0123456789";
