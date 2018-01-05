@@ -21,6 +21,6 @@ public class ReferenceBook extends LibraryBook{
     return "non-circulating reference book";
   }
   public String toString(){
-    return getAuthor() + getTitle() + getISBN() + circulationStatus() + getCallNumber(); + getCollection();
+    return getAuthor() + getTitle() + getISBN() + circulationStatus() + getCallNumber() + getCollection();
   }
 }

@@ -134,8 +134,8 @@ public class Library {
     System.out.println("Checkout ");
     lib.checkout("Harry Potus", "March 1, 2017", "3E.55");
 
-    //System.out.println("SUPPOSED TO FAIL: Checkout of reference book");
-    //lib.checkout("Goofy", "March 6, 2017", "02-3A-43" );
+    System.out.println("SUPPOSED TO FAIL: Checkout of reference book");
+    lib.checkout("Goofy", "March 6, 2017", "02-3A-43" );
 
     System.out.println("Returned");
     lib.returned("3E.55");
