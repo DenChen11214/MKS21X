@@ -10,7 +10,7 @@ public class SuperArrayIterator implements Iterator<String>{
     throw new UnsupportedOperationException();
   }
   public boolean hasNext(){
-    return index <= ary.size() - 1;
+    return index < ary.size();
   }
   public String next(){
     if (hasNext()){
