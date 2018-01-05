@@ -1,3 +1,4 @@
+import java.util.*;
 public class Barcode implements Comparable<Barcode>{
   private String zip;
   public Barcode(String zip){
@@ -40,6 +41,7 @@ public class Barcode implements Comparable<Barcode>{
   }
   public static String toZip(String code){
     String[] digitBarcode = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+    List<String> list = Arrays.asList(digitBarcode);
     String zip = "";
     int check = 0;
     int checkDigit = 0;
@@ -47,24 +49,21 @@ public class Barcode implements Comparable<Barcode>{
        (code.charAt(0) != '|' || code.charAt(code.length() - 1) != '|')){
       throw new IllegalArgumentException();
     }
-    for(int i =1;i< code.length() - 6;i +=5){
+    for(int i = 0; i < code.length(); i++){
+      if(code.charAt(i) != ':' &&  code.charAt(i) != '|'){
+        throw new IllegalArgumentException();
+      }
+    }
+    for(int i =1;i< code.length() - 1;i +=5){
+      if(!list.contains(code.substring(i, i + 5))){
+        throw new IllegalArgumentException();
+      }
       for(int n = 0; n < digitBarcode.length; n ++){
-        if(!code.substring(i, i + 5).equals(digitBarcode[n])){
-          check ++;
-        }
         if(code.substring(i,i+5).equals(digitBarcode[n]) 
            && i < code.length() -6){
           checkDigit += n;
           zip += Integer.toString(n);
         }
-      }
-    }
-    if(check == 60){
-      throw new IllegalArgumentException();    
-    }
-    for(int i = 0; i < code.length(); i++){
-      if(code.charAt(i) != ':' &&  code.charAt(i) != '|'){
-        throw new IllegalArgumentException();
       }
     }
     checkDigit = checkDigit % 10;
