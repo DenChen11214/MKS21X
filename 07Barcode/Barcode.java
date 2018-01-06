@@ -87,12 +87,23 @@ public class Barcode implements Comparable<Barcode>{
     return str;
   }
   public static void main(String[] args){
-    Barcode bar = new Barcode("12345");
-    Barcode bar2 = new Barcode("14345");
-    System.out.println(toZip("|:::||::|:|::||::|::|:|:|::|:|:|"));
-    System.out.println(bar.compareTo(bar2));
-    System.out.println(bar.getCode());
-    System.out.println(bar);
+    String[]badBarcodes = {"|||:::||:::||:::||:::||:::||:::",
+      "|||:::||:::||:::||:::||:::||:::||||",
+      "|||:::||:::||:::||:::||:::||::::",
+      ":||:::||:::||:::||:::||:::||:::|",
+      "||:|::||z::|:|::||::f:::|||:|::|",
+      "|:::||||:::a::||||::::::||::||:|",
+      "|||:::||:::||:::||:::||::::::|||"};
+    String[] badZips = {"9012","000000","12x34"};
+    //Barcode a = new Barcode(badZips[0]);
+    // Barcode b = new Barcode(badZips[1]);
+    //Barcode c = new Barcode(badZips[2]);
+    //System.out.println(toZip(badBarcodes[0]));
+    //System.out.println(toZip(badBarcodes[1]));
+    //System.out.println(toZip(badBarcodes[2]));
+    //System.out.println(toZip(badBarcodes[3]));
+    //System.out.println(toZip(badBarcodes[4]));
+    //System.out.println(toZip(badBarcodes[5]));
+    //System.out.println(toZip(badBarcodes[6]));
   }
-
 }
